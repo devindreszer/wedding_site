@@ -38,10 +38,10 @@ App = React.createClass
 
   render: ->
     if @state.activeSide == 'content'
-      iClasses = 'fa fa-bars fa-fw'
+      iClasses = 'fa fa-share fa-fw'
       flipClasses = 'flip-container'
     else
-      iClasses = 'fa fa-times fa-fw'
+      iClasses = 'fa fa-reply fa-fw'
       flipClasses = 'flip-container flip'
     <div id='app'>
       <a href='#' className="navigation-button" onClick={@handleClick}>
