@@ -1,0 +1,11 @@
+@import "vars";
+
+#main-nav {
+  text-align: left;
+  font-size: 16px;
+  a { color: black; }
+
+  ul {
+    list-style: none outside none;
+  }
+}

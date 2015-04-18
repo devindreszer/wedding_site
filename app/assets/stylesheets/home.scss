@@ -1,11 +1,13 @@
-#container {
-  width: 100%;
-  height: 500px;
-}
+@import "vars";
 
-#app {
-  width: 100%;
+#home-page {
   height: 100%;
-  text-align: center;
-  font-size: 36px;
+  width: 100%;
+  background: image-url('postcard-placeholder.jpg') no-repeat;
+  background-size: cover;
+
+  .home-page-logo {
+    @include vertical-align();
+    color: white;
+  }
 }
