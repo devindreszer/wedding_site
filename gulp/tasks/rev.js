@@ -49,6 +49,7 @@ gulp.task('rev-assets', function(){
   var task = gulp.src(config.publicAssets + '/**/!(*.{css,js})')
   .pipe(rev())
   .pipe(gulp.dest(config.publicAssets))
+  .pipe(rmOrig())
   .pipe(rev.manifest())
   .pipe(gulp.dest(config.publicAssets));
   return task;
