@@ -14,3 +14,5 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require reactComponents
+
+React.render(React.createElement(App), $('#container')[0]);
