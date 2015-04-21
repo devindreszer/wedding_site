@@ -16,13 +16,9 @@ App = React.createClass
   setHeight: ->
     documentHeight = window.innerHeight
     $app = $(@getDOMNode())
-    $flipContainer = $(React.findDOMNode(@refs.flipContainer))
+    $land = $(React.findDOMNode(@refs.land))
     $app.css('height', documentHeight)
-    postCardHeight = 0.75 * documentHeight
-    postCardWidth = (4/3) * postCardHeight
-    $flipContainer.css
-      'max-height': postCardHeight
-      'max-width': postCardWidth
+    $land.css('height', documentHeight * (1/3))
 
   setContent: (content) ->
     @setState
@@ -44,15 +40,21 @@ App = React.createClass
       iClasses = 'fa fa-reply fa-fw'
       flipClasses = 'flip-container flip'
     <div id='app'>
-      <a href='#' className="navigation-button" onClick={@handleClick}>
-        <i className={iClasses}></i>
-      </a>
-      <div ref='flipContainer' className={flipClasses}>
-        <div className='flipper'>
-          <MainContent content={@state.content}/>
-          <MainNavigation setContent={@setContent} />
-        </div>
+      <div ref='sky' className="sky">
+      </div>
+      <div ref='land' className='land'>
       </div>
     </div>
+
+
+# <a href='#' className="navigation-button" onClick={@handleClick}>
+#         <i className={iClasses}></i>
+#       </a>
+#       <div ref='flipContainer' className={flipClasses}>
+#         <div className='flipper'>
+#           <MainContent content={@state.content}/>
+#           <MainNavigation setContent={@setContent} />
+#         </div>
+#       </div>
 
 module.exports = App

@@ -1,17 +1,5 @@
 @import "vars";
 
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: image-url('wood-background.jpg') no-repeat center center fixed;
-  background-size: cover;
-}
-
-h1, h2, h3, h4, h5, p { margin: 0; }
-
 a {
   color: white;
   text-decoration: none;
@@ -20,65 +8,82 @@ a {
 #container {
   text-align: center;
   font-size: 36px;
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
 #app {
   width: 100%;
 }
 
-.navigation-button {
-  z-index: 99;
-  position: fixed;
-  right: 20px;
-  top: 20px;
-  font-size: 30px;
-}
-
-.flip-container {
-  @include vertical-align();
-  margin: 0 auto;
-  max-width: 600px;
-  max-height: 450px;
-}
-
-.flip-container, .flipper, #main-content, #main-navigation {
+.sky {
   width: 100%;
   height: 100%;
+  // @include background-image(linear-gradient(#101417, #080B10, #091219, #060F2C, #071437, #0E2F52));
+  @include background-image(radial-gradient(circle at 50% 100%, #0E2F52, #071437, #060F2C, #091219, #080B10, #101417));
+  background-size: cover;
 }
 
-#main-content, #main-navigation {
-  background: white;
-  padding: 10px;
-  box-shadow: 1px 1px 4px black;
-}
-
-.flip-container {
-  perspective: 1200px;
-}
-
-.flip-container.flip .flipper {
-  transform: rotateY(180deg);
-}
-
-.flipper {
-  transition: 1.5s;
-  transform-style: preserve-3d;
-  position: relative;
-}
-
-#main-content, #main-navigation {
-  backface-visibility: hidden;
+.land {
   position: absolute;
-  top: 0;
+  width: 100%;
+  bottom: 0;
   left: 0;
+  @include background-image(linear-gradient(#374B19, #56682C, #869A48, #9FB457));
+  // @include background-image(radial-gradient(circle at 50% 300%, #9FB457, #56682C, #374B19));
 }
 
-#main-content {
-  z-index: 2;
-  transform: rotateY(0deg);
-}
+// .navigation-button {
+//   z-index: 99;
+//   position: fixed;
+//   right: 20px;
+//   top: 20px;
+//   font-size: 30px;
+// }
 
-#main-navigation {
-  transform: rotateY(180deg);
-}
+// .flip-container {
+//   display: none;
+//   @include vertical-align();
+//   margin: 0 auto;
+//   max-width: 600px;
+//   max-height: 450px;
+// }
+
+// .flip-container, .flipper, #main-content, #main-navigation {
+//   width: 100%;
+//   height: 100%;
+// }
+
+// #main-content, #main-navigation {
+//   background: white;
+//   padding: 10px;
+//   box-shadow: 1px 1px 4px black;
+// }
+
+// .flip-container {
+//   perspective: 1200px;
+// }
+
+// .flip-container.flip .flipper {
+//   transform: rotateY(180deg);
+// }
+
+// .flipper {
+//   transition: 1.5s;
+//   transform-style: preserve-3d;
+//   position: relative;
+// }
+
+// #main-content, #main-navigation {
+//   backface-visibility: hidden;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+// }
+
+// #main-content {
+//   z-index: 2;
+//   transform: rotateY(0deg);
+// }
+
+// #main-navigation {
+//   transform: rotateY(180deg);
+// }
