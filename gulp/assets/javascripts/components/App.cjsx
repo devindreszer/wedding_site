@@ -6,7 +6,7 @@ MainNavigation = require('./MainNavigation')
 
 App = React.createClass
   getInitialState: ->
-    activeSide: 'content'
+    activeView: 'content'
     content: 'home'
 
   componentDidMount: ->
@@ -16,45 +16,38 @@ App = React.createClass
   setHeight: ->
     documentHeight = window.innerHeight
     $app = $(@getDOMNode())
-    $land = $(React.findDOMNode(@refs.land))
     $app.css('height', documentHeight)
-    $land.css('height', documentHeight * (1/3))
 
   setContent: (content) ->
     @setState
-      activeSide: 'content'
+      activeView: 'content'
       content: content
 
   handleClick: (event) ->
     event.preventDefault()
-    if @state.activeSide == 'content'
-      @setState activeSide: 'navigation'
+    if @state.activeView == 'content'
+      @setState activeView: 'navigation'
     else
-      @setState activeSide: 'content'
+      @setState activeView: 'content'
 
   render: ->
-    if @state.activeSide == 'content'
-      iClasses = 'fa fa-share fa-fw'
-      flipClasses = 'flip-container'
+    if @state.activeView == 'content'
+      iClasses = 'fa fa-bars fa-fw'
+      aClasses='navigation-button navigation-open'
     else
-      iClasses = 'fa fa-reply fa-fw'
-      flipClasses = 'flip-container flip'
+      iClasses = 'fa fa-times fa-fw'
+      aClasses='navigation-button navigation-close'
     <div id='app'>
-      <div ref='sky' className="sky">
-      </div>
-      <div ref='land' className='land'>
-      </div>
+      <a href='#' className={aClasses} onClick={@handleClick}>
+        <i className={iClasses}></i>
+      </a>
+      <MainContent
+        content={@state.content}
+        isActive={@state.activeView == 'content'} />
+      <MainNavigation
+        ref="nav"
+        setContent={@setContent}
+        isActive={@state.activeView == 'navigation'} />
     </div>
-
-
-# <a href='#' className="navigation-button" onClick={@handleClick}>
-#         <i className={iClasses}></i>
-#       </a>
-#       <div ref='flipContainer' className={flipClasses}>
-#         <div className='flipper'>
-#           <MainContent content={@state.content}/>
-#           <MainNavigation setContent={@setContent} />
-#         </div>
-#       </div>
 
 module.exports = App

@@ -3,21 +3,23 @@ $ = require('jquery')
 classNames = require('classnames')
 
 HomePage = require('./HomePage')
-LodgingPage = require('./LodgingPage')
+AccomodationsPage = require('./AccomodationsPage')
 
 MainContent = React.createClass
   render: ->
     switch @props.content
       when 'home' then page = @renderHomePage()
-      when 'lodging' then page = @renderLodgingPage()
-    <div id="main-content">
+      when 'accomodations' then page = @renderAccomodationsPage()
+    classes = classNames
+      'active': @props.isActive
+    <div id="main-content" className={classes}>
       {page}
     </div>
 
   renderHomePage: ->
     <HomePage />
 
-  renderLodgingPage: ->
-    <LodgingPage />
+  renderAccomodationsPage: ->
+    <AccomodationsPage />
 
 module.exports = MainContent

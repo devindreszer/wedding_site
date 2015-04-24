@@ -14,6 +14,35 @@ a {
   width: 100%;
 }
 
+.navigation-button {
+  z-index: 999;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  font-size: 30px;
+  &.navigation-close { color: $navy; }
+}
+
+#main-navigation, #main-content, #home-page {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+#main-navigation, #main-content {
+  display: none;
+  &.active { display: block; }
+}
+
+.logo {
+  margin: 0 auto;
+  @include vertical-align();
+  background: image-url('logo_white.svg') no-repeat center center;
+  background-size: contain;
+  &.large { height: 50%; width: 75%; }
+}
+
 .sky {
   width: 100%;
   height: 100%;
@@ -30,60 +59,3 @@ a {
   @include background-image(linear-gradient(#374B19, #56682C, #869A48, #9FB457));
   // @include background-image(radial-gradient(circle at 50% 300%, #9FB457, #56682C, #374B19));
 }
-
-// .navigation-button {
-//   z-index: 99;
-//   position: fixed;
-//   right: 20px;
-//   top: 20px;
-//   font-size: 30px;
-// }
-
-// .flip-container {
-//   display: none;
-//   @include vertical-align();
-//   margin: 0 auto;
-//   max-width: 600px;
-//   max-height: 450px;
-// }
-
-// .flip-container, .flipper, #main-content, #main-navigation {
-//   width: 100%;
-//   height: 100%;
-// }
-
-// #main-content, #main-navigation {
-//   background: white;
-//   padding: 10px;
-//   box-shadow: 1px 1px 4px black;
-// }
-
-// .flip-container {
-//   perspective: 1200px;
-// }
-
-// .flip-container.flip .flipper {
-//   transform: rotateY(180deg);
-// }
-
-// .flipper {
-//   transition: 1.5s;
-//   transform-style: preserve-3d;
-//   position: relative;
-// }
-
-// #main-content, #main-navigation {
-//   backface-visibility: hidden;
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-// }
-
-// #main-content {
-//   z-index: 2;
-//   transform: rotateY(0deg);
-// }
-
-// #main-navigation {
-//   transform: rotateY(180deg);
-// }

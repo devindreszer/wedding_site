@@ -1,11 +1,11 @@
 @import "vars";
 
 #main-nav {
-  text-align: left;
-  font-size: 16px;
-  a { color: black; }
+  @include vertical-align();
 
   ul {
     list-style: none outside none;
   }
+
+  a { color: $navy; }
 }
