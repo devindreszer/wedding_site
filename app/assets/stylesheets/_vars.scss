@@ -1,7 +1,8 @@
+@import url("http://fonts.googleapis.com/css?family=Antic+Slab");
 $navy: #101417;
 
 @mixin vertical-align {
   position: relative;
   top: 50%;
-  transform: translateY(-50%);
+  @include transform(translateY(-50%));
 }

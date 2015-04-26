@@ -1,5 +1,9 @@
 @import "vars";
 
+body {
+  font-family: 'Antic Slab', serif;
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -17,8 +21,8 @@ a {
 .navigation-button {
   z-index: 999;
   position: fixed;
-  right: 20px;
-  top: 20px;
+  right: 1rem;
+  top: 1rem;
   font-size: 30px;
   &.navigation-close { color: $navy; }
 }
@@ -30,16 +34,11 @@ a {
   height: 100%;
 }
 
-#main-navigation {
+#main-navigation, #main-content {
   opacity: 0;
+  z-index: 9;
   @include transition(opacity 0.5s ease-in);
-  &.active { opacity: 1; }
-}
-
-#main-content {
-  opacity: 0;
-  @include transition(opacity 0.5s ease-out);
-  &.active { opacity: 1; }
+  &.active { opacity: 1; z-index: 99; }
 }
 
 #home-page {
@@ -71,4 +70,8 @@ a {
   left: 0;
   @include background-image(linear-gradient(#374B19, #56682C, #869A48, #9FB457));
   // @include background-image(radial-gradient(circle at 50% 300%, #9FB457, #56682C, #374B19));
+}
+
+.sub-content-page {
+  padding: 2rem;
 }
