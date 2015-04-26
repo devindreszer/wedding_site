@@ -30,9 +30,22 @@ a {
   height: 100%;
 }
 
-#main-navigation, #main-content {
-  display: none;
-  &.active { display: block; }
+#main-navigation {
+  opacity: 0;
+  @include transition(opacity 0.5s ease-in);
+  &.active { opacity: 1; }
+}
+
+#main-content {
+  opacity: 0;
+  @include transition(opacity 0.5s ease-out);
+  &.active { opacity: 1; }
+}
+
+#home-page {
+  top: 0;
+  @include transition(top 1s ease-out);
+  &.sub-content-active { top: -100%; }
 }
 
 .logo {

@@ -8,16 +8,13 @@ AccomodationsPage = require('./AccomodationsPage')
 MainContent = React.createClass
   render: ->
     switch @props.content
-      when 'home' then page = @renderHomePage()
       when 'accomodations' then page = @renderAccomodationsPage()
     classes = classNames
       'active': @props.isActive
     <div id="main-content" className={classes}>
+      <HomePage subContentActive={@props.content != 'home'} />
       {page}
     </div>
-
-  renderHomePage: ->
-    <HomePage />
 
   renderAccomodationsPage: ->
     <AccomodationsPage />

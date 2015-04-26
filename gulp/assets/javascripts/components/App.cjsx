@@ -19,19 +19,22 @@ App = React.createClass
     $app.css('height', documentHeight)
 
   setContent: (content) ->
-    @setState
-      activeView: 'content'
-      content: content
+    @setState activeView: 'content'
+    setTimeout(=>
+      @setState content: content
+    1000)
 
   handleClick: (event) ->
     event.preventDefault()
-    if @state.activeView == 'content'
+    if @state.activeView == 'content' and @state.content == 'home'
       @setState activeView: 'navigation'
     else
-      @setState activeView: 'content'
+      @setState
+        activeView: 'content'
+        content: 'home'
 
   render: ->
-    if @state.activeView == 'content'
+    if @state.activeView == 'content' and @state.content == 'home'
       iClasses = 'fa fa-bars fa-fw'
       aClasses='navigation-button navigation-open'
     else
