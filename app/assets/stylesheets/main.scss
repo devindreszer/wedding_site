@@ -11,7 +11,7 @@ a {
 
 #container {
   text-align: center;
-  font-size: 36px;
+  font-size: 2rem;
 }
 
 #app {
@@ -23,7 +23,7 @@ a {
   position: fixed;
   right: 1rem;
   top: 1rem;
-  font-size: 30px;
+  font-size: 2rem;
   &.navigation-close { color: $navy; }
 }
 
@@ -74,4 +74,9 @@ a {
 
 .sub-content-page {
   padding: 2rem;
+}
+
+@media (max-width: 768px) {
+  .logo.large { height: 50%; width: 90%; }
+  .navigation-button { right: 0.5rem; top: 0.5rem; }
 }
