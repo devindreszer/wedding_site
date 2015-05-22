@@ -7,29 +7,36 @@ MainNavigation = React.createClass
     @props.setContent(content)
 
   render: ->
-    home =
-      name: 'home'
-      content: 'Home'
-      clickHandler: @handleNavSelection
-    activities =
-      name: 'activities'
-      content: 'Activities'
-      clickHandler: @handleNavSelection
-    accomodations =
-      name: 'accomodations'
-      content: 'Accomodations'
-      clickHandler: @handleNavSelection
-    optionsList = [home, activities, accomodations]
-    navOptions = optionsList.map(@renderNavOption)
     classes = classNames
       'active': @props.isActive
     <div id="main-navigation" className={classes}>
       <nav id='main-nav'>
-        <ul className='main-nav-options'>
-          {navOptions}
-        </ul>
+        Coming in July 2015
       </nav>
     </div>
+    # home =
+    #   name: 'home'
+    #   content: 'Home'
+    #   clickHandler: @handleNavSelection
+    # activities =
+    #   name: 'activities'
+    #   content: 'Activities'
+    #   clickHandler: @handleNavSelection
+    # accomodations =
+    #   name: 'accomodations'
+    #   content: 'Accomodations'
+    #   clickHandler: @handleNavSelection
+    # optionsList = [home, activities, accomodations]
+    # navOptions = optionsList.map(@renderNavOption)
+    # classes = classNames
+    #   'active': @props.isActive
+    # <div id="main-navigation" className={classes}>
+    #   <nav id='main-nav'>
+    #     <ul className='main-nav-options'>
+    #       {navOptions}
+    #     </ul>
+    #   </nav>
+    # </div>
 
   renderNavOption: (navOption) ->
     liClassObject =
