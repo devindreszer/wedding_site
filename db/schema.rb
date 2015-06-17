@@ -11,9 +11,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20150617021848) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "registry_items", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.decimal  "price",       precision: 8, scale: 2
+    t.integer  "quantity"
+    t.boolean  "purchased"
+    t.string   "retailer"
+    t.string   "image_url"
+    t.string   "link"
+    t.integer  "ranking"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "registry_items", ["user_id"], name: "index_registry_items_on_user_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string   "name"
+    t.string   "street_address"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip_code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
