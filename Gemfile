@@ -13,7 +13,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bourbon'
 gem 'neat'
 
+gem 'devise', github: 'plataformatec/devise'
+
+gem 'activeadmin', github: 'activeadmin'
+
 group :development, :test do
+  gem 'annotate'
   gem 'pry-rails'
   gem 'web-console', '~> 2.0'
   gem 'spring'
