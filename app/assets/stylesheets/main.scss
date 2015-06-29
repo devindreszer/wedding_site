@@ -5,26 +5,17 @@ body {
 }
 
 a {
-  color: white;
+  color: $white;
   text-decoration: none;
 }
 
 #container {
   text-align: center;
-  font-size: 2rem;
+  font-size: 1rem;
 }
 
 #app {
   width: 100%;
-}
-
-.navigation-button {
-  z-index: 999;
-  position: fixed;
-  right: 1rem;
-  top: 1rem;
-  font-size: 2rem;
-  &.navigation-close { color: $navy; }
 }
 
 #main-navigation, #main-content, #home-page {
@@ -73,10 +64,25 @@ a {
 }
 
 .sub-content-page {
-  padding: 2rem;
+  padding: 4rem 0;
+  height: 100%;
+  width: 100%;
+}
+
+.content-page-header {
+  padding-bottom: 2rem;
+}
+
+.map {
+  margin: 0 auto;
+  @include vertical-align();
+  background: image-url('logo_white.svg') no-repeat center center;
+  background-size: contain;
+  height: 50%; width: 75%;
 }
 
 @media (max-width: 768px) {
   .logo.large { height: 50%; width: 90%; }
   .navigation-button { right: 0.5rem; top: 0.5rem; }
+  .map { height: 50%; width: 90%; }
 }

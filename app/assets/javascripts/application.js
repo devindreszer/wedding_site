@@ -15,4 +15,4 @@
 //= require turbolinks
 //= require reactComponents
 
-React.render(React.createElement(App), $('#container')[0]);
+window.AppRouter.run();

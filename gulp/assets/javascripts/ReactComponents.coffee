@@ -1,2 +1,2 @@
 window.React = require('react/addons')
-window.App = require('./components/App')
+window.AppRouter = require('./AppRouter')

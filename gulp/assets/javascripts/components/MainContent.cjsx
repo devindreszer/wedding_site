@@ -3,14 +3,20 @@ $ = require('jquery')
 classNames = require('classnames')
 
 HomePage = require('./HomePage')
-AccomodationsPage = require('./AccomodationsPage')
-ActivitiesPage = require('./ActivitiesPage')
+OurStoryPage = require('./OurStoryPage')
+WeddingPage = require('./WeddingPage')
+ReceptionPage = require('./ReceptionPage')
+RegistryPage = require('./RegistryPage')
+PhotosPage = require('./PhotosPage')
 
 MainContent = React.createClass
   render: ->
-    switch @props.content
-      when 'accomodations' then page = @renderAccomodationsPage()
-      when 'activities' then page = @renderActivitiesPage()
+    page = switch @props.content
+      when 'ourStory' then @renderOurStoryPage()
+      when 'wedding' then @renderWeddingPage()
+      when 'reception' then @renderReceptionPage()
+      when 'registry' then @renderRegistryPage()
+      when 'photos' then @renderPhotosPage()
     classes = classNames
       'active': @props.isActive
     <div id="main-content" className={classes}>
@@ -18,10 +24,19 @@ MainContent = React.createClass
       {page}
     </div>
 
-  renderAccomodationsPage: ->
-    <AccomodationsPage />
+  renderOurStoryPage: ->
+    <OurStoryPage />
 
-  renderActivitiesPage: ->
-    <ActivitiesPage />
+  renderWeddingPage: ->
+    <WeddingPage />
+
+  renderReceptionPage: ->
+    <ReceptionPage />
+
+  renderRegistryPage: ->
+    <RegistryPage />
+
+  renderPhotosPage: ->
+    <PhotosPage />
 
 module.exports = MainContent

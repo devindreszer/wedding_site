@@ -1,0 +1,26 @@
+@import "vars";
+
+.itinerary {
+  @include row();
+  margin: 0 auto;
+}
+
+.itinerary-content {
+  @include span-columns(6);
+  @include shift(3);
+  text-align: left;
+  padding-bottom: 2rem;
+}
+
+.itinerary-date {
+  font-size: 2rem;
+  padding-bottom: 1rem;
+}
+
+.wedding-itinerary-item {
+  font-size: 1.5rem;
+}
+
+.itinerary-time {
+  margin-right: 1rem;
+}

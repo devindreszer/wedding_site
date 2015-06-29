@@ -1,13 +1,105 @@
 @import "vars";
 
-#main-nav {
-  @include vertical-align();
+// DESKTOP
+#desktop-header {
+  background-color: $navy;
+  z-index: 99;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
-  ul {
-    list-style: none outside none;
+  #main-nav {
+    @include row();
+    margin: 0 auto;
+    max-width: 960px;
   }
 
-  li { padding: 0.5rem; }
+  #main-nav.logo-in-header {
+    .main-nav-left { @include span-columns(4); }
+    .main-nav-logo-container { @include span-columns(4); }
+    .main-nav-right { @include span-columns(4); }
+  }
 
-  a { color: $navy; }
+  .main-nav-right, .main-nav-left, .main-nav-link {
+    @include transition(width 0.5s ease-in, margin 0.5s ease-in);
+  }
+
+  .main-nav-right, .main-nav-left {
+    @include span-columns(6);
+    padding: 2rem 0;
+  }
+
+  .main-nav-logo-container {
+    display: none;
+    height: 5rem;
+  }
+
+  .main-nav-link {
+    @include span-columns(4);
+    text-transform: uppercase;
+    color: $white;
+    opacity: 0.6;
+    &.active, &:hover { opacity: 1; }
+  }
+
+  .main-nav-logo {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    background: image-url('logo_white.svg') no-repeat center center;
+    background-size: contain;
+    width: 120%;
+    height: 120%;
+    margin-left: -10%;
+    margin-top: 0%;
+  }
+}
+
+// MOBILE
+@media (max-width: 850px) {
+  #desktop-header {
+    display: none;
+  }
+}
+
+@media (min-width: 850px) {
+  .navigation-button {
+    display: none;
+  }
+
+  #mobile-nav-container {
+    display: none;
+  }
+}
+
+.navigation-button {
+  z-index: 999;
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  font-size: 2rem;
+  &.navigation-close { color: $navy; }
+}
+
+#mobile-nav-container {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: $white;
+  opacity: 0;
+  @include transition(opacity 0.5s ease-in);
+  &.active { opacity: 1; z-index: 99; }
+
+  #main-nav {
+    @include vertical-align();
+  }
+
+  .main-nav-link {
+    display: block;
+    color: $navy;
+    font-size: 2rem;
+    line-height: 2;
+  }
 }
