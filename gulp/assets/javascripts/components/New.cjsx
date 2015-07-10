@@ -3,26 +3,6 @@ $ = require('jquery')
 classNames = require('classnames')
 
 New = React.createClass
-  getInitialState: ->
-    windowHeight: undefined
-    windowWidth: undefined
-
-  componentDidMount: ->
-    @setDimensions()
-    window.addEventListener('resize', @setDimensions)
-
-  getStyles: ->
-    locationImage:
-      height: @state.windowHeight * 0.6
-      width: @state.windowHeight * 0.6
-      maxHeight: @state.windowWidth * 0.8
-      maxWidth: @state.windowWidth * 0.8
-
-  setDimensions: ->
-    @setState
-      windowHeight: window.innerHeight
-      windowWidth: window.innerWidth
-
   render: ->
     <div id='new-app'>
       <header>
@@ -38,14 +18,14 @@ New = React.createClass
       {@renderOurJourneySection()}
       {@renderWeddingSection()}
       {@renderReceptionSection()}
-      {@renderRegistrySection()}
       {@renderPhotosSection()}
+      {@renderRegistrySection()}
     </div>
 
   renderHomeSection: ->
     <div id='home-section'>
-      <div className='logo-section home-logo-image' style={{height: @state.windowHeight}}>
-        <div className='logo-image main-logo' style={{height: '50%'}}>
+      <div className='logo-section home-logo-image'>
+        <div className='logo-image main-logo large-logo'>
         </div>
       </div>
     </div>
@@ -57,8 +37,8 @@ New = React.createClass
         </div>
       </div>
       <div className='map-container'>
-        <div className='map-image' style={{height: @state.windowHeight}}>
-          <div className='map-image-container' style={{height: '80%'}}>
+        <div className='map-image'>
+          <div className='map-image-container'>
           </div>
         </div>
         <div className='map-legend'>
@@ -68,8 +48,8 @@ New = React.createClass
 
   renderWeddingSection: ->
     <div id='wedding-section'>
-      <div className='logo-section wedding-logo-image' style={{height: @state.windowHeight}}>
-        <div className='logo-image wedding-logo' style={{height: '50%'}}>
+      <div className='logo-section wedding-logo-image'>
+        <div className='logo-image wedding-logo large-logo'>
         </div>
       </div>
       <div className='header-section'>
@@ -84,7 +64,7 @@ New = React.createClass
       </div>
       <div className='location-section'>
         <div className='location-container'>
-          <div className='location-image-container ceremony-site' style={@getStyles().locationImage}>
+          <div className='location-image-container ceremony-site'>
           </div>
           <div className='location-text-section'>
             <div className='location-text-header'>Ceremony</div>
@@ -96,7 +76,7 @@ New = React.createClass
           </div>
         </div>
         <div className='location-container'>
-          <div className='location-image-container reception-site' style={@getStyles().locationImage}>
+          <div className='location-image-container reception-site'>
           </div>
           <div className='location-text-section'>
             <div className='location-text-header'>Reception</div>
@@ -129,8 +109,8 @@ New = React.createClass
 
   renderReceptionSection: ->
     <div id='reception-section'>
-      <div className='logo-section' style={{height: @state.windowHeight}}>
-        <div className='logo-image reception-logo' style={{height: '50%'}}>
+      <div className='logo-section'>
+        <div className='logo-image reception-logo large-logo'>
         </div>
       </div>
       <div className='header-section'>
@@ -151,6 +131,80 @@ New = React.createClass
         </div>
       </div>
       <div className='photos-container'>
+        <div className='main-container row'>
+          <div className='large-column-40 small-column-80'>
+
+            <div className='row'>
+              <div className='photo-box large-box-20 small-box-40'>
+              </div>
+              <div className='photo-box large-box-20 small-box-40'>
+              </div>
+            </div>
+
+            <div className='row'>
+              <div className='photo-box large-box-27 small-box-53'>
+              </div>
+              <div className='large-column-13 small-column-27'>
+                <div className='photo-box large-box-13 small-box-27'>
+                </div>
+                <div className='photo-box large-box-13 small-box-27'>
+                </div>
+              </div>
+            </div>
+
+            <div className='row'>
+              <div className='photo-box large-box-20 small-box-40'>
+              </div>
+              <div className='photo-box large-box-20 small-box-40'>
+              </div>
+            </div>
+
+            <div className='row'>
+              <div className='photo-box large-box-13 small-box-27'>
+              </div>
+              <div className='photo-box large-box-13 small-box-27'>
+              </div>
+              <div className='photo-box large-box-13 small-box-27'>
+              </div>
+            </div>
+          </div>
+
+          <div className='large-column-40 small-column-80'>
+            <div className='row'>
+              <div className='photo-box large-box-13 small-box-27'>
+              </div>
+              <div className='photo-box large-box-13 small-box-27'>
+              </div>
+              <div className='photo-box large-box-13 small-box-27'>
+              </div>
+            </div>
+
+            <div className='row'>
+              <div className='photo-box large-box-20 small-box-40'>
+              </div>
+              <div className='photo-box large-box-20 small-box-40'>
+              </div>
+            </div>
+
+            <div className='row'>
+              <div className='photo-box large-box-20 small-box-40'>
+              </div>
+              <div className='photo-box large-box-20 small-box-40'>
+              </div>
+            </div>
+
+            <div className='row'>
+              <div className='large-column-13 small-column-27'>
+                <div className='photo-box large-box-13 small-box-27'>
+                </div>
+                <div className='photo-box large-box-13 small-box-27'>
+                </div>
+              </div>
+              <div className='photo-box large-box-27 small-box-53'>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
