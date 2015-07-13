@@ -2,6 +2,8 @@ React = require('react/addons')
 $ = require('jquery')
 classNames = require('classnames')
 
+RegistrySection = require('./RegistrySection')
+
 New = React.createClass
   render: ->
     <div id='new-app'>
@@ -209,13 +211,6 @@ New = React.createClass
     </div>
 
   renderRegistrySection: ->
-    <div id='registry-section'>
-      <div className='header-section'>
-        <div className='header-image registry-header'>
-        </div>
-      </div>
-      <div className='registry-container'>
-      </div>
-    </div>
+    <RegistrySection />
 
 module.exports = New
