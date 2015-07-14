@@ -42,14 +42,14 @@ body {
   }
 
   .wedding-logo-image {
-    background: linear-gradient(rgba(16,20,23,0.9),rgba(16,20,23,0.7)), image-url('redwoods.jpg');
+    background: linear-gradient(rgba(16,20,23,1),rgba(16,20,23,0.6)), image-url('redwoods.jpg');
     background-repeat: no-repeat, no-repeat;
     background-position: center center, center center;
     background-size: contain, cover;
   }
 
   .reception-logo-image {
-    background: linear-gradient(rgba(16,20,23,0.9),rgba(16,20,23,0.7)), image-url('lake.jpg');
+    background: linear-gradient(rgba(16,20,23,1),rgba(16,20,23,0.6)), image-url('lake.jpg');
     background-repeat: no-repeat, no-repeat;
     background-position: center center, center center;
     background-size: contain, cover;
