@@ -1,4 +1,6 @@
 alt = require('../alt')
+require('es6-promise').polyfill()
+require('isomorphic-fetch')
 
 class RegistryItemActions
   fetchRegistryItems: ->
@@ -13,13 +15,14 @@ class RegistryItemActions
       .then (registryItems) => @actions.updateRegistryItems(registryItems)
       .catch (errorMessage) => @actions.registryItemsFailed(errorMessage)
 
-  editRegistryItem: (item) ->
+  editRegistryItem: (item, purchaserName) ->
     @dispatch()
     itemID = item.get('id')
     itemParams =
       registry_item:
         id: itemID
         purchased: true
+        purchaser_name: purchaserName
     fetch("registry_items/#{itemID}.json", {
       method: 'PUT'
       body: JSON.stringify(itemParams)
