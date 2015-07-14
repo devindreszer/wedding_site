@@ -48,6 +48,13 @@ body {
     background-size: contain, cover;
   }
 
+  .reception-logo-image {
+    background: linear-gradient(rgba(16,20,23,0.9),rgba(16,20,23,0.7)), image-url('lake.jpg');
+    background-repeat: no-repeat, no-repeat;
+    background-position: center center, center center;
+    background-size: contain, cover;
+  }
+
   .logo-image {
     margin: 0 auto;
     @include vertical-align();
@@ -122,6 +129,7 @@ body {
     margin: 0 auto;
     &.ceremony-site { background: image-url('ceremony-site.jpg') no-repeat center center; background-size: cover; }
     &.reception-site { background: image-url('reception-site.jpg') no-repeat center center; background-size: cover; }
+    &.wrentham-site { background: image-url('umbrella.jpg') no-repeat center center; background-size: cover; }
   }
 
   .location-text-section {
@@ -142,7 +150,7 @@ body {
   }
 
   #reception-section {
-    padding-bottom: 6rem;
+    padding-bottom: 2rem;
   }
 
   .registry-custom {

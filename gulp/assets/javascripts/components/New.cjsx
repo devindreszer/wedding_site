@@ -9,7 +9,8 @@ New = React.createClass
     <div id='new-app'>
       <header>
         <nav id='desktop-nav'>
-          <a className='desktop-nav-item' href='/#our-journey-section'>Our Journey</a>
+          <a className='desktop-nav-item' href='/#home-section'>Home</a>
+          <a className='desktop-nav-item' href='/#our-journey-section'>Our Story</a>
           <a className='desktop-nav-item' href='/#wedding-section'>Wedding</a>
           <a className='desktop-nav-item' href='/#reception-section'>Reception</a>
           <a className='desktop-nav-item' href='/#photos-section'>Photos</a>
@@ -111,7 +112,7 @@ New = React.createClass
 
   renderReceptionSection: ->
     <div id='reception-section'>
-      <div className='logo-section'>
+      <div className='logo-section reception-logo-image'>
         <div className='logo-image reception-logo large-logo'>
         </div>
       </div>
@@ -123,6 +124,18 @@ New = React.createClass
         {"We will be celebrating our marriage with friends and family at Janet
          and Peter Fontana's in Wrentham, MA in May 2016.  More details to come
          after our wedding ceremony."}
+      </div>
+      <div className='location-section'>
+        <div className='location-image-container wrentham-site'>
+        </div>
+        <div className='location-text-section'>
+          <div className='location-text-header'>POST-WEDDING RECEPTION</div>
+          <div className='location-text'>
+            May 2016<br/>
+            The Fontana Residence, 90 Oak Pt<br/>
+            Wrentham, MA<br/>
+          </div>
+        </div>
       </div>
     </div>
 
