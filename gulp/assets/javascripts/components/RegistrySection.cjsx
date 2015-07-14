@@ -7,10 +7,10 @@ RegistryItemStore = require('../stores/RegistryItemStore')
 
 RegistrySection = React.createClass
   getInitialState: ->
-    registryItems: Immutable.Map({})
-    errorMessage: undefined
-    isLoading: undefined
+    registryItems: Immutable.List()
     showDetailsID: undefined
+    fulfillmentConfirmationID: undefined
+    purchaserName: undefined
 
   componentDidMount: ->
     RegistryItemStore.listen(@onChange)
@@ -20,7 +20,7 @@ RegistrySection = React.createClass
     RegistryItemStore.unlisten(@onChange)
 
   onChange: ->
-    @setState RegistryItemStore.getState()
+    @setState registryItems: RegistryItemStore.getItemsByPurchased()
 
   showItemDetails: (item) ->
     @setState showDetailsID: item.get('id') unless item.get('purchased')
@@ -28,9 +28,23 @@ RegistrySection = React.createClass
   hideItemDetails: (item) ->
     @setState showDetailsID: undefined
 
-  handleFulfilled: (event, item) ->
+  handleInputChange: (event) ->
+    @setState purchaserName: event.target.value
+
+  submitFulfillment: (event, item) ->
     event.preventDefault()
-    RegistryItemActions.editRegistryItem(item)
+    @setState fulfillmentConfirmationID: item.get('id')
+
+  cancelConfirmFulfillment: (event) ->
+    event.preventDefault()
+    @setState fulfillmentConfirmationID: undefined
+
+  handleConfirmFulfillment: (event, item) ->
+    event.preventDefault()
+    if @state.purchaserName
+      RegistryItemActions.editRegistryItem(item, @state.purchaserName)
+    else
+      alert('To confirm your fulfillment and to help the bride and groom send thank you cards, please enter your name.')
 
   render: ->
     registryItems = if @state.registryItems.size > 0
@@ -62,6 +76,7 @@ RegistrySection = React.createClass
       'fulfilled': item.get('purchased')
     modal = @renderModalItem(item) if @state.showDetailsID == item.get('id')
     <li
+      key={item.get('id')}
       className={liClasses}
       onMouseEnter={() => @showItemDetails(item)}
       onMouseLeave={() => @hideItemDetails(item)}>
@@ -84,17 +99,6 @@ RegistrySection = React.createClass
       </a>
     else
       <div className='registry-item-retailer'>{item.get('retailer')}</div>
-    fulfillment = if item.get('purchased')
-      <div className='registry-item-fulfillment'>
-        Fulfilled
-      </div>
-    else
-      <a
-        href='#'
-        onClick={() => @handleFulfilled(event, item)}
-        className='registry-item-fulfillment'>
-        Mark as Fulfilled
-      </a>
     <div className='registry-item-card'>
       <div className='registry-item-image' style={backgroundImage: "url('#{item.get('image_url')}')"}></div>
       <div className='registry-item-info'>
@@ -107,9 +111,53 @@ RegistrySection = React.createClass
           {item.get('description')}
         </div>
         <div className='registry-item-fulfillment-container'>
-          {fulfillment}
+          {@renderFulfillmentSection(item)}
         </div>
       </div>
     </div>
+
+  renderFulfillmentSection: (item) ->
+    if item.get('purchased')
+      <div className='registry-item-fulfillment'>
+        Fulfilled
+      </div>
+    else if @state.fulfillmentConfirmationID == item.get('id')
+      <div className='registry-item-confirm-fulfillment'>
+        To confirm your fulfillment and to help the bride and groom send thank you cards,
+         please enter your name.
+        <form>
+          <input
+            type="text"
+            id="purchaser-name"
+            className="purchaser-name-input"
+            placeholder="Please Enter Your Name"
+            onChange={@handleInputChange}
+            value={@state.purchaserName} />
+          <div className='purchaser-name-btn-container'>
+            <button
+              name="button"
+              id="purchaser-name-cancel"
+              className="purchaser-name-btn cancel-btn"
+              onClick={@cancelConfirmFulfillment}>
+              Cancel
+            </button>
+            <button
+              name="button"
+              type="submit"
+              id="purchaser-name-submit"
+              className="purchaser-name-btn submit-btn"
+              onClick={() => @handleConfirmFulfillment(event, item)}>
+              Confirm
+            </button>
+          </div>
+        </form>
+      </div>
+    else
+      <a href='#'
+        onClick={() => @submitFulfillment(event, item)}
+        className='registry-item-fulfillment'>
+        Mark as Fulfilled
+      </a>
+
 
 module.exports = RegistrySection

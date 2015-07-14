@@ -13,6 +13,6 @@ class RegistryItemsController < ApplicationController
   private
 
   def registry_item_params
-    params.require(:registry_item).permit(:purchased)
+    params.require(:registry_item).permit(:purchased, :purchaser_name)
   end
 end

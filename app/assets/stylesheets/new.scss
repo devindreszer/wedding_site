@@ -189,8 +189,12 @@ body {
     padding: 1rem;
     float: left;
     width: calc(20vw - 2rem);
-    box-shadow: 1px 1px 4px #D9D9D9;
-    &.fulfilled { opacity: 0.5; }
+    box-shadow: 1px 1px 4px $grey80;
+    &.fulfilled {
+      opacity: 0.5;
+      box-shadow: 1px 1px 4px $grey90;
+      .registry-item-name { text-decoration: line-through; }
+    }
   }
 
   .registry-item-card {
@@ -237,6 +241,36 @@ body {
     &:hover { background: $light-green; }
   }
 
+  .registry-item-confirm-fulfillment {
+    text-align: left;
+  }
+
+  .purchaser-name-input {
+    display: block;
+    padding: 0.5rem 1rem;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 1px 2px 0 inset;
+    border: 1px solid $grey90;
+    border-radius: 0.5rem;
+    width: 80%;
+    margin: 1rem auto;
+    font-family: 'Antic Slab', serif;
+  }
+
+  .purchaser-name-btn-container {
+    text-align: center;
+  }
+
+  .purchaser-name-btn {
+    font-family: 'Antic Slab', serif;
+    background: $grey90;
+    color: $navy;
+    padding: 0.5rem 1rem;
+    box-shadow: none;
+    border: none;
+    &:first-child { margin-right: 1rem; }
+    &.submit-btn { background: darken($light-green, 10); color: white; }
+  }
+
   .registry-item-modal {
     z-index: 99;
     position: absolute;
@@ -245,7 +279,7 @@ body {
     left: -3.5vw;
     width: 25vw;
     padding: 2rem;
-    box-shadow: 4px 4px 16px #7F7F7F;
+    box-shadow: 4px 4px 16px $medium-grey;
 
     .registry-item-image {
       width: calc(25vw - 4rem);
