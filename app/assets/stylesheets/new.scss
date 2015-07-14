@@ -8,7 +8,7 @@ body {
   width: 100%;
 
   #desktop-nav {
-    z-index: 99;
+    z-index: 999;
     position: fixed;
     top: 0;
     left: 0;
@@ -145,16 +145,105 @@ body {
     padding-bottom: 6rem;
   }
 
-  #registry-section {
-    background: $light-green;
+  .registry-custom {
     padding-bottom: 6rem;
   }
 
+  .registry-sur-la-table {
+    background: $light-green;
+    padding: 4rem 0 6rem 0;
+  }
+
+  .registry-sur-la-table-text {
+    font-size: 1.2rem;
+    padding-bottom: 2rem;
+  }
+
   .registry-container {
+    display: block;
     height: 4rem;
     width: auto;
     background: image-url('sur-la-table-logo.png') no-repeat center center;
     background-size: contain;
+  }
+
+  .registry-items {
+    @include row();
+    width: 80vw;
+    margin: 0 auto;
+  }
+
+  .registry-item {
+    position: relative;
+    display: block;
+    background: white;
+    margin: 1rem;
+    padding: 1rem;
+    float: left;
+    width: calc(20vw - 2rem);
+    box-shadow: 1px 1px 4px #D9D9D9;
+    &.fulfilled { opacity: 0.5; }
+  }
+
+  .registry-item-card {
+    width: 100%;
+  }
+
+  .registry-item-image {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    width: calc(20vw - 4rem);
+    height: calc(20vw - 4rem);
+  }
+
+  .registry-item-info {
+    @include row();
+    padding-top: 1rem;
+    text-align: left;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+
+  .registry-item-details { @include row(); }
+  .registry-item-retailer { @include span-columns(8); color: $light-green; }
+  .registry-item-price { @include span-columns(4); text-align: right; color: $light-green; }
+
+  .registry-item-description {
+    display: none;
+    padding-top: 1rem;
+  }
+
+  .registry-item-fulfillment-container {
+    display: none;
+    text-align: center;
+    padding: 2rem 0 1rem 0;
+  }
+
+  .registry-item-fulfillment {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: darken($light-green, 10);
+    color: white;
+    text-align: center;
+    &:hover { background: $light-green; }
+  }
+
+  .registry-item-modal {
+    z-index: 99;
+    position: absolute;
+    background: white;
+    top: -7vw;
+    left: -3.5vw;
+    width: 25vw;
+    padding: 2rem;
+    box-shadow: 4px 4px 16px #7F7F7F;
+
+    .registry-item-image {
+      width: calc(25vw - 4rem);
+      height: calc(25vw - 4rem);
+    }
+    .registry-item-description, .registry-item-fulfillment-container { display: block; }
   }
 
   #photos-section { background: $navy; padding-bottom: 6rem; }
