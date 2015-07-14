@@ -32,12 +32,6 @@ RegistrySection = React.createClass
     event.preventDefault()
     RegistryItemActions.editRegistryItem(item)
 
-  setRegistryItems: (registryItems) ->
-    @setState registryItems: registryItems
-
-  setErrorMessage: (errorMessage) ->
-    @setState errorMessage: errorMessage
-
   render: ->
     registryItems = if @state.registryItems.size > 0
       @state.registryItems.map(@renderRegistryItem)

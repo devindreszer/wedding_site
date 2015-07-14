@@ -264,7 +264,12 @@ body {
   .large-box-20 { float: left; width: 20vw; height: 20vw; }
   .large-box-13 { float: left; width: calc((1/3)*40vw); height: calc((1/3)*40vw); }
 
-  .photo-box { background: white; border: 10px solid $navy; }
+  .photo-box {
+    border: 10px solid $navy;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
 
   @media (max-width: 960px) {
     .location-container { @include span-columns(12); }

@@ -12,7 +12,7 @@ class RegistryItemStore
       handleEditRegistryItem: RegistryItemActions.EDIT_REGISTRY_ITEM
       handleFetchRegistryItems: RegistryItemActions.FETCH_REGISTRY_ITEMS
       handleUpdateRegistryItems: RegistryItemActions.UPDATE_REGISTRY_ITEMS
-      handleAccountsFailed: RegistryItemActions.REGISTRY_ITEMS_FAILED
+      handleRegistryItemsFailed: RegistryItemActions.REGISTRY_ITEMS_FAILED
 
   handleEditRegistryItem: ->
     @setState
@@ -31,7 +31,7 @@ class RegistryItemStore
       newItems[registryItem.id] = registryItem
     @_mergeRegistryItems(newItems)
 
-  handleAccountsFailed: (errorMessage) ->
+  handleRegistryItemsFailed: (errorMessage) ->
     @setState
       errorMessage: errorMessage
       isLoading: false

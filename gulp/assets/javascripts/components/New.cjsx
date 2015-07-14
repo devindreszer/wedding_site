@@ -3,6 +3,7 @@ $ = require('jquery')
 classNames = require('classnames')
 
 RegistrySection = require('./RegistrySection')
+PhotoSection = require('./PhotoSection')
 
 New = React.createClass
   render: ->
@@ -21,7 +22,7 @@ New = React.createClass
       {@renderOurJourneySection()}
       {@renderWeddingSection()}
       {@renderReceptionSection()}
-      {@renderPhotosSection()}
+      {@renderPhotoSection()}
       {@renderRegistrySection()}
     </div>
 
@@ -139,89 +140,8 @@ New = React.createClass
       </div>
     </div>
 
-  renderPhotosSection: ->
-    <div id='photos-section'>
-      <div className='header-section'>
-        <div className='header-image photos-header'>
-        </div>
-      </div>
-      <div className='photos-container'>
-        <div className='main-container row'>
-          <div className='large-column-40 small-column-80'>
-
-            <div className='row'>
-              <div className='photo-box large-box-20 small-box-40'>
-              </div>
-              <div className='photo-box large-box-20 small-box-40'>
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='photo-box large-box-27 small-box-53'>
-              </div>
-              <div className='large-column-13 small-column-27'>
-                <div className='photo-box large-box-13 small-box-27'>
-                </div>
-                <div className='photo-box large-box-13 small-box-27'>
-                </div>
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='photo-box large-box-20 small-box-40'>
-              </div>
-              <div className='photo-box large-box-20 small-box-40'>
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='photo-box large-box-13 small-box-27'>
-              </div>
-              <div className='photo-box large-box-13 small-box-27'>
-              </div>
-              <div className='photo-box large-box-13 small-box-27'>
-              </div>
-            </div>
-          </div>
-
-          <div className='large-column-40 small-column-80'>
-            <div className='row'>
-              <div className='photo-box large-box-13 small-box-27'>
-              </div>
-              <div className='photo-box large-box-13 small-box-27'>
-              </div>
-              <div className='photo-box large-box-13 small-box-27'>
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='photo-box large-box-20 small-box-40'>
-              </div>
-              <div className='photo-box large-box-20 small-box-40'>
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='photo-box large-box-20 small-box-40'>
-              </div>
-              <div className='photo-box large-box-20 small-box-40'>
-              </div>
-            </div>
-
-            <div className='row'>
-              <div className='large-column-13 small-column-27'>
-                <div className='photo-box large-box-13 small-box-27'>
-                </div>
-                <div className='photo-box large-box-13 small-box-27'>
-                </div>
-              </div>
-              <div className='photo-box large-box-27 small-box-53'>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  renderPhotoSection: ->
+    <PhotoSection />
 
   renderRegistrySection: ->
     <RegistrySection />
