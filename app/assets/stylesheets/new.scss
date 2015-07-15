@@ -65,7 +65,7 @@ body {
   }
 
   .header-section {
-    padding: 4rem 0 2rem 0;
+    padding: 4rem 2rem 2rem 2rem;
     margin: 0 auto;
     text-align: center;
   }
@@ -123,8 +123,8 @@ body {
   .location-image-container {
     height: 60vh;
     width: 60vh;
-    max-height: 80vw;
-    max-width: 80vw;
+    max-height: 40vw;
+    max-width: 40vw;
     border-radius: 50%;
     margin: 0 auto;
     &.ceremony-site { background: image-url('ceremony-site.jpg') no-repeat center center; background-size: cover; }
@@ -164,7 +164,8 @@ body {
 
   .registry-sur-la-table-text {
     font-size: 1.2rem;
-    padding-bottom: 2rem;
+    padding: 0 2rem 2rem 2rem;
+    line-height: 1.75;
   }
 
   .registry-container {
@@ -305,15 +306,49 @@ body {
     background-size: contain;
   }
 
-  @media (max-width: 960px) {
+  @media (max-width: 1199px) {
+    .registry-items { width: 81vw; }
+    .registry-item { width: calc(27vw - 2rem); }
+    .registry-item-image { width: calc(27vw - 4rem); height: calc(27vw - 4rem); }
+    .registry-item-modal {
+      top: 0; left: 0vw; width: calc(27vw - 2rem); padding: 1rem;
+      .registry-item-image { width: calc(27vw - 4rem); height: calc(27vw - 4rem); }
+    }
+  }
+
+  @media (max-width: 959px) {
+    .header-section { padding: 2rem 2rem 1rem 2rem; }
+    .logo-image.large-logo { width: 100vw; height: 50vh; }
     .location-container { @include span-columns(12); }
-    .text-section { width: 100%; }
+    .text-section { padding: 1rem 2rem; width: 100%; font-size: 1rem; }
+    .registry-sur-la-table-text { font-size: 1rem; }
+    .wedding-details-section { padding: 2rem 0; }
+    .location-image-container { max-height: 80vw; max-width: 80vw; }
+
+    .registry-items { width: 80vw; }
+    .registry-item { width: calc(40vw - 2rem); }
+    .registry-item-image { width: calc(40vw - 4rem); height: calc(40vw - 4rem); }
+    .registry-item-modal {
+      top: 0; left: 0vw; width: calc(40vw - 2rem); padding: 1rem;
+      .registry-item-image { width: calc(40vw - 4rem); height: calc(40vw - 4rem); }
+    }
+  }
+
+  @media (max-width: 768px) {
     .small-column-80 { width: 80vw; }
     .small-column-27 { float: left; width: calc((1/3)*80vw); }
 
     .small-box-53 { float: left; width: calc((2/3)*80vw); height: calc((2/3)*80vw); }
     .small-box-40 { float: left; width: 40vw; height: 40vw; }
     .small-box-27 { float: left; width: calc((1/3)*80vw); height: calc((1/3)*80vw); }
+
+    .registry-items { width: 80vw; }
+    .registry-item { width: calc(80vw - 2rem); }
+    .registry-item-image { width: calc(80vw - 4rem); height: calc(80vw - 4rem); }
+    .registry-item-modal {
+      top: 0; left: 0vw; width: calc(80vw - 2rem); padding: 1rem;
+      .registry-item-image { width: calc(80vw - 4rem); height: calc(80vw - 4rem); }
+    }
   }
 
 }
