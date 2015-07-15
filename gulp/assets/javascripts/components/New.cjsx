@@ -68,7 +68,8 @@ New = React.createClass
       </div>
       <div className='location-section'>
         <div className='location-container'>
-          <div className='location-image-container ceremony-site'>
+          <div className='location-image-container ceremony-site'
+            style={backgroundImage: "url(https://lh3.googleusercontent.com/CgKrVK9K0NZA2eZhCR5GrN97MCx2lPo7RQVcBOl74nM=s461-no)"}>
           </div>
           <div className='location-text-section'>
             <div className='location-text-header'>Ceremony</div>
@@ -113,7 +114,8 @@ New = React.createClass
 
   renderReceptionSection: ->
     <div id='reception-section'>
-      <div className='logo-section reception-logo-image'>
+      <div className='logo-section reception-logo-image'
+        style={backgroundImage: "linear-gradient(rgba(16,20,23,1),rgba(16,20,23,0.6)), url(https://lh3.googleusercontent.com/qEfJoQAy413cZGNV_zVtwQnkcCKHC8PHV9XGw6K6PNE=w1094-h728-no)"}>
         <div className='logo-image reception-logo large-logo'>
         </div>
       </div>
@@ -127,7 +129,8 @@ New = React.createClass
          after our wedding ceremony."}
       </div>
       <div className='location-section'>
-        <div className='location-image-container wrentham-site'>
+        <div className='location-image-container wrentham-site'
+          style={backgroundImage: "url(https://lh3.googleusercontent.com/UG-tuHcc4Xm0ydoLMRCHM5riD1etWFMWb-5gf6i8zvg=s500-no)"}>
         </div>
         <div className='location-text-section'>
           <div className='location-text-header'>POST-WEDDING RECEPTION</div>
