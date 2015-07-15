@@ -6,7 +6,27 @@ RegistrySection = require('./RegistrySection')
 PhotoSection = require('./PhotoSection')
 
 New = React.createClass
+  getInitialState: ->
+    mobileNavOpen: false
+
+  handleMobileNavSelection: (event) ->
+    @setState mobileNavOpen: false
+
+  openMobileNav: (event) ->
+    event.preventDefault()
+    @setState mobileNavOpen: !@state.mobileNavOpen
+
   render: ->
+    mobileNav = if @state.mobileNavOpen
+      <div className='mobile-nav-items'>
+        <a className='mobile-nav-item' href='/#home-section' onClick={@handleMobileNavSelection}>Home</a>
+        <a className='mobile-nav-item' href='/#our-journey-section' onClick={@handleMobileNavSelection}>Our Story</a>
+        <a className='mobile-nav-item' href='/#wedding-section' onClick={@handleMobileNavSelection}>Wedding</a>
+        <a className='mobile-nav-item' href='/#reception-section' onClick={@handleMobileNavSelection}>Reception</a>
+        <a className='mobile-nav-item' href='/#photos-section' onClick={@handleMobileNavSelection}>Photos</a>
+        <a className='mobile-nav-item' href='/#registry-section' onClick={@handleMobileNavSelection}>Registry</a>
+      </div>
+
     <div id='new-app'>
       <header>
         <nav id='desktop-nav'>
@@ -17,6 +37,12 @@ New = React.createClass
           <a className='desktop-nav-item' href='/#photos-section'>Photos</a>
           <a className='desktop-nav-item' href='/#registry-section'>Registry</a>
         </nav>
+        <div id='mobile-nav'>
+          <a href='#'
+            className='mobile-nav-menu'
+            onClick={@openMobileNav}>Menu</a>
+          {mobileNav}
+        </div>
       </header>
       {@renderHomeSection()}
       {@renderOurJourneySection()}
