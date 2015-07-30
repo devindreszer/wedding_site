@@ -31,9 +31,9 @@ New = React.createClass
       <header>
         <nav id='desktop-nav'>
           <a className='desktop-nav-item' href='/#home-section'>Home</a>
-          <a className='desktop-nav-item' href='/#our-journey-section'>Our Story</a>
+          <a className='desktop-nav-item' href='/#our-journey-section'>Our Journey</a>
           <a className='desktop-nav-item' href='/#wedding-section'>Wedding</a>
-          <a className='desktop-nav-item' href='/#reception-section'>Reception</a>
+          <a className='desktop-nav-item' href='/#reception-section'>Celebration</a>
           <a className='desktop-nav-item' href='/#photos-section'>Photos</a>
           <a className='desktop-nav-item' href='/#registry-section'>Registry</a>
         </nav>
@@ -120,11 +120,19 @@ New = React.createClass
         </div>
       </div>
       <div className='wedding-details-section'>
+        <div className='subheader-section'>
+          <div className='subheader-image ceremony-details-header'>
+          </div>
+        </div>
         <div className='text-section'>
           {"We would love it if our ceremony reflected the love and support that
            we get from all of you.  Please let us know if you would like to share
            something during the ceremony.  It can be anything - a reading, a
            musical performance, a memory, well wishes, etc."}
+        </div>
+        <div className='subheader-section'>
+          <div className='subheader-image forest-formal-header'>
+          </div>
         </div>
         <div className='text-section'>
           {"We will be doing a lot of walking on uneven dirt surfaces during the

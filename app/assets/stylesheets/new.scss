@@ -83,7 +83,7 @@ body {
     margin: 0 auto;
     @include vertical-align();
     &.large-logo { width: 80vw; height: 50vh; }
-    &.main-logo { background: image-url('logo_white.svg') no-repeat center center; background-size: contain; }
+    &.main-logo { background: image-url('names-white.png') no-repeat center center; background-size: contain; }
     &.wedding-logo { background: image-url('logo_white.svg') no-repeat center center; background-size: contain; }
     &.reception-logo { background: image-url('reception-logo-white.png') no-repeat center center; background-size: contain; }
   }
@@ -97,11 +97,24 @@ body {
   .header-image {
     height: 6rem;
     width: auto;
-    &.our-journey-header { background: image-url('our-story-blue.png') no-repeat center center; background-size: contain; }
+    &.our-journey-header { background: image-url('our-journey.png') no-repeat center center; background-size: contain; }
     &.wedding-header { background: image-url('wedding-blue.png') no-repeat center center; background-size: contain; }
-    &.reception-header { background: image-url('reception-blue.png') no-repeat center center; background-size: contain; }
+    &.reception-header { background: image-url('wrentham-celebration.png') no-repeat center center; background-size: contain; }
     &.photos-header { background: image-url('lindseyanddevin-white.png') no-repeat center center; background-size: contain; }
     &.registry-header { background: image-url('registry-blue.png') no-repeat center center; background-size: contain; }
+  }
+
+  .subheader-section {
+    padding: 2rem 2rem 0rem 2rem;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .subheader-image {
+    height: 4rem;
+    width: auto;
+    &.ceremony-details-header { background: image-url('ceremony-details.png') no-repeat center center; background-size: contain; }
+    &.forest-formal-header { background: image-url('forest-formal.png') no-repeat center center; background-size: contain; }
   }
 
   .map-container {
