@@ -68,6 +68,17 @@ RegistrySection = React.createClass
           target='_blank'>
         </a>
       </div>
+      <div className='registry-address-section'>
+        <div className='registry-address'>
+          Lindsey Fontana & Devin Dreszer<br/>
+          3313 Madison Ave, T112<br/>
+          Boulder, CO 80303<br/>
+        </div>
+        <div className='registry-address-note'>
+          Please note that we are currently house hunting and this address may change.
+          Please check back here before mailing any gifts. Thanks!
+        </div>
+      </div>
     </div>
 
   renderRegistryItem: (item) ->
