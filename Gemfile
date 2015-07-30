@@ -17,6 +17,8 @@ gem 'devise', github: 'plataformatec/devise'
 
 gem 'activeadmin', github: 'activeadmin'
 
+gem 'dynopoker'
+
 group :development, :test do
   gem 'annotate'
   gem 'pry-rails'

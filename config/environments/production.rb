@@ -76,4 +76,8 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  Dynopoker.configure do |config|
+    config.address = 'http://lindseyanddevin.com'
+  end
 end
