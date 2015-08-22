@@ -75,8 +75,7 @@ RegistrySection = React.createClass
           Boulder, CO 80303<br/>
         </div>
         <div className='registry-address-note'>
-          Please note that we are currently house hunting and this address may change.
-          Please check back here before mailing any gifts. Thanks!
+          We are moving next week! Stay tuned for our new address.
         </div>
       </div>
     </div>
