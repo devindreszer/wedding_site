@@ -71,11 +71,8 @@ RegistrySection = React.createClass
       <div className='registry-address-section'>
         <div className='registry-address'>
           Lindsey Fontana & Devin Dreszer<br/>
-          3313 Madison Ave, T112<br/>
-          Boulder, CO 80303<br/>
-        </div>
-        <div className='registry-address-note'>
-          We are moving next week! Stay tuned for our new address.
+          41 Silver Spruce<br/>
+          Boulder, CO 80302<br/>
         </div>
       </div>
     </div>
