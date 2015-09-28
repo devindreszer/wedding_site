@@ -68,6 +68,23 @@ RegistrySection = React.createClass
           target='_blank'>
         </a>
       </div>
+      <div className='registry-honeymoon-house'>
+        <div className='registry-honeymoon-house-text'>
+          {"Still can't find the right gift? We greatly appreciate any assistance with our new house or honeymoon in St. Lucia."}
+        </div>
+        <div>Venmo: @lindseymfontana</div>
+        <div>PayPal: lindseymfontana@gmail.com</div>
+        <div className='location-section'>
+          <div className='location-container'>
+            <div className='location-image-container house'>
+            </div>
+          </div>
+          <div className='location-container'>
+            <div className='location-image-container honeymoon'>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className='registry-address-section'>
         <div className='registry-address'>
           Lindsey Fontana & Devin Dreszer<br/>

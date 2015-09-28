@@ -169,6 +169,8 @@ body {
     background-position: center center;
     background-size: cover;
     &.reception-site { background-image: image-url('reception-site.jpg'); }
+    &.house { background-image: image-url('house.jpg'); }
+    &.honeymoon { background-image: image-url('honeymoon.jpg'); }
   }
 
   .location-text-section {
@@ -220,6 +222,17 @@ body {
   }
 
   .registry-sur-la-table-text {
+    font-size: 1.2rem;
+    padding: 0 2rem 2rem 2rem;
+    line-height: 1.75;
+  }
+
+  .registry-honeymoon-house {
+    background: white;
+    padding: 4rem 0 6rem 0;
+  }
+
+  .registry-honeymoon-house-text {
     font-size: 1.2rem;
     padding: 0 2rem 2rem 2rem;
     line-height: 1.75;
