@@ -143,6 +143,90 @@ New = React.createClass
         </div>
       </div>
       <div className='itinerary-section'>
+        <div className='subheader-section'>
+          <div className='subheader-image itinerary-header'>
+          </div>
+        </div>
+        <div className='itinerary-day-section'>
+          <div className='itinerary-day'>
+            THURSDAY, October 29th
+          </div>
+          <div className='itinerary-event'>
+            7:00PM - 10:00PM: Welcome Celebration
+          </div>
+          <div className='itinerary-text text-section'>
+            Meet in Lindsey and Devin's room (text us for the number). At 8pm we will head out to one of the picnic areas on the property and make s'mores.
+          </div>
+        </div>
+        <div className='itinerary-day-section'>
+          <div className='itinerary-day'>
+            FRIDAY, October 30th
+          </div>
+          <div className='itinerary-event'>
+            9:00AM - 2:00PM: Santa Cruz Beach Day
+          </div>
+          <div className='itinerary-text text-section'>
+            Meet at 9 to carpool down to Capitola. We are renting paddleboards, brining beach games, and ordering pizza. Devin and Lindsey are leaving the beach at 2pm to get ready for the rehearsal
+          </div>
+          <div className='itinerary-event'>
+            3:30PM: Trick or Treating
+          </div>
+          <div className='itinerary-text text-section'>
+            We are going to give everyone a few pieces of candy to give out to Devin's nephews, Kai and Kruz, who will be trick or treating around Costanoa. Please try to be in your room so they can have lots of stops.
+          </div>
+          <div className='itinerary-event'>
+            5:00PM: Rehearsal
+          </div>
+          <div className='itinerary-text text-section'>
+            Everyone who has a role in the wedding ceremony will head over to Butano State Park to practice. The rest of the group can take this time to relax.
+          </div>
+          <div className='itinerary-event'>
+            7:00PM: Rehearsal Dinner
+          </div>
+          <div className='itinerary-text text-section'>
+            Halloween costume party at Highway 1 Brewing Company
+          </div>
+        </div>
+        <div className='itinerary-day-section'>
+          <div className='itinerary-day'>
+            SATURDAY, October 31st
+          </div>
+          <div className='itinerary-event'>
+            2:30PM: Bus Arrives
+          </div>
+          <div className='itinerary-text text-section'>
+            We have a bus to take us around for the wedding day activities. The bus leaves at 2:45PM sharp. Please bring everything you will need for the night.
+          </div>
+          <div className='itinerary-event'>
+            3:00PM - 4:00PM: Wedding Ceremony
+          </div>
+          <div className='itinerary-text text-section'>
+            We will be in a redwood grove at the Campfire Center in Butano State Park.
+          </div>
+          <div className='itinerary-event'>
+            4:00PM - 6:00PM: Cocktail Hour
+          </div>
+          <div className='itinerary-text text-section'>
+            We will head to the beach for alcohol, snacks, and games and take lots of photos.
+          </div>
+          <div className='itinerary-event'>
+            6:00PM - 10:00PM: Reception
+          </div>
+          <div className='itinerary-text text-section'>
+            Depending on the weather, dinner will be outside as the sun sets. The bus will leave Pie Ranch at 10:00PM to take us back to Costanoa at the end of the night.
+          </div>
+        </div>
+        <div className='itinerary-day-section'>
+          <div className='itinerary-day'>
+            SUNDAY, November 1st
+          </div>
+          <div className='itinerary-event'>
+            10:00AM: Brunch
+          </div>
+          <div className='itinerary-text text-section'>
+            Meet at the Pescadero Country Store to reminisce, recover, and say goodbye.
+          </div>
+        </div>
       </div>
     </div>
 

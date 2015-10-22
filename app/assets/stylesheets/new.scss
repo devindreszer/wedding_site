@@ -116,6 +116,7 @@ body {
     width: auto;
     &.ceremony-details-header { background: image-url('ceremony-details.png') no-repeat center center; background-size: contain; }
     &.forest-formal-header { background: image-url('forest-formal.png') no-repeat center center; background-size: contain; }
+    &.itinerary-header { background: image-url('weekend-itinerary.png') no-repeat center center; background-size: contain; }
   }
 
   .map-container {
@@ -188,6 +189,30 @@ body {
   .wedding-details-section {
     background: $light-green;
     padding: 4rem 0;
+  }
+
+  .itinerary-section {
+    background: white;
+    padding: 4rem 0;
+  }
+
+  .itinerary-day-section {
+    padding: 1rem 0;
+  }
+
+  .itinerary-day {
+    font-size: 2rem;
+    padding-top: 1rem;
+  }
+
+  .itinerary-event {
+    font-size: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  .itinerary-text {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   #reception-section {
